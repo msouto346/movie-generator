@@ -14,4 +14,12 @@ class MovieApi
         'api_key' => config('movie_api.key')
       ], $params));
   }
+
+  public function getShowList(array $params = []): Response
+  {
+    return Http::withoutVerifying()
+      ->get(config('movie_api.url') . '/tv?', array_merge([
+        'api_key' => config('movie_api.key')
+      ], $params));
+  }
 }
