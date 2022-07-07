@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('vote');
             $table->string('type');
             $table->json('genres');
+            $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });
     }
